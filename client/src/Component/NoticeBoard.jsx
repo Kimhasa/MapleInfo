@@ -3,7 +3,6 @@ import Button from 'react-bootstrap/Button';
 import Table from 'react-bootstrap/Table';
 import React from 'react';
 import Navbar from "react-bootstrap/Navbar";
-import NoticeBoardCreate from "./NoticeBoardCreate";
 
 function NoticeBoard(){
 
@@ -45,7 +44,7 @@ function NoticeBoard(){
             </div>
             <div style={{ marginTop: "10px", border: "0px solid", display: "flex", alignItems: "center"}}>
                 <input
-                    style={{ height: "30px", flex: "1", border: "1px solid", outline: "none"}}
+                    style={{ height: "30px", flex: "1", outline: "none", marginRight: "5px"}}
                     type={"text"}
                     placeholder={"검색어를 입력해주세요"}
                 />

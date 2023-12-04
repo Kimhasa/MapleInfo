@@ -1,0 +1,20 @@
+.board-container{
+    margin-top: 40px;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+}
+
+.board-view{
+    width: 1000px;
+    height: 600px;
+    margin: 10px;
+}
+
+.board-create-btn{
+    font-size: 13px;
+    color: white;
+    text-decoration: none;
+}

@@ -25,6 +25,7 @@
     "@emotion/styled": "^11.11.0",
     "@mui/material": "^5.14.18",
     "@mui/styled-engine-sc": "^6.0.0-alpha.6",
+    "@uiw/react-md-editor": "^4.0.1",
     "express-session": "^1.17.3",
     "nodemon": "^3.0.1",
     "styled-components": "^6.1.1"
