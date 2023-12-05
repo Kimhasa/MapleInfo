@@ -402,10 +402,9 @@ function MainContents(){
                     </table>
                 </div>
             </div>
-
-            <div>
-                <p> 초보자를 위한 유용한 정보</p>
-            </div>
+            {/*<div>*/}
+            {/*    <p> 초보자를 위한 유용한 정보</p>*/}
+            {/*</div>*/}
         </div>
     );
 }

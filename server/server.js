@@ -4,6 +4,7 @@ const cors = require('cors');
 const app = express();
 const bodyParser = require('body-parser');
 const initUserLogin = require('./userLogin');   // 로그인/회원가입 모듈
+const initCreatePost = require('./boardCRUD');
 
 // JSON body parser 설정
 app.use(bodyParser.json());
@@ -27,3 +28,4 @@ app.listen(app.get('port'), () => {
 });
 
 initUserLogin(app);
+initCreatePost(app);

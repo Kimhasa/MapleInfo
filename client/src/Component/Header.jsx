@@ -5,6 +5,7 @@ import NavDropdown from 'react-bootstrap/NavDropdown';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import React, {useEffect, useState} from 'react';
 import BossCaculator from "./BossCaculator";
+import NoticesUpdates from "./NoticesUpdates";
 
 function Header(){
 
@@ -37,7 +38,7 @@ function Header(){
                     <Navbar.Brand href="/MainContents">Maple InFo</Navbar.Brand>
                     <Nav className="me-auto">
                         <Nav.Link href="#home">초보자 가이드</Nav.Link>
-                        <Nav.Link href="#features">공지사항/업데이트</Nav.Link>
+                        <Nav.Link href="/NoticesUpdates">공지사항/업데이트</Nav.Link>
                         <Nav.Link href="/NoticeBoard">게시판</Nav.Link>
                     </Nav>
                     <Navbar.Collapse id="navbar-dark-example">

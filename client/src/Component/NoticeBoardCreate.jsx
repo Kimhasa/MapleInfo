@@ -4,18 +4,16 @@ import MdEditor from '@uiw/react-md-editor';
 import Button from "react-bootstrap/Button";
 
 function NoticeBoardCreate() {
-    const [content, setContent] = useState('');
-
     // Markdown 에디터에서 내용이 변경될 때 실행되는 함수
     const handleEditorChange = (value) => {
-        setContent(value || '');
+        setContents(value || '');
     };
     const [title, setTitle] = useState('');
     const [contents, setContents] = useState('');
-    const [user, setUser] = useState('');
+    // const [user, setUser] = useState('');
 
     const handleTitle = (e) => setTitle(e.target.value);
-    const handleContents = (e) => setContents(e.target.value);
+    // const handleContents = (e) => setContents(e.target.value);
     const writing = (e) => {
         e.preventDefault(); // 기본 제출 동작 방지
         fetch('http://localhost:3000/writing', {
@@ -44,31 +42,35 @@ function NoticeBoardCreate() {
     };
     return (
         <div className={"board-container"}>
-            <div>
-                <input
-                    type={"text"}
-                    placeholder={"제목을 입력해 주세요"}
-                    style={{width:"500px"}}
-                />
-            </div>
-            <div className={"board-view"}>
-                <MdEditor
-                    value={content}
-                    onChange={handleEditorChange}
-                    height={600}
-                    textareaProps={{
-                        placeholder: "타인을 비방하거나 분쟁을 일으키는 게시글은 제재를 받을 수 있습니다.."
-                    }}
-                />
-            </div>
-            <div>
-                <Button style={{margin:"5px"}} variant="dark" >
-                    <a href="/NoticeBoardCreate" className={"board-create-btn"}>글작성</a>
-                </Button>
-                <Button style={{margin:"5px"}} variant="dark" >
-                    <a href="/NoticeBoard" className={"board-create-btn"}>글목록</a>
-                </Button>
-            </div>
+            <form onSubmit={writing}>
+                <div>
+                    <input
+                        value={title}
+                        onChange={handleTitle}
+                        type={"text"}
+                        placeholder={"제목을 입력해 주세요"}
+                        style={{width:"500px"}}
+                    />
+                </div>
+                <div className={"board-view"}>
+                    <MdEditor
+                        value={contents}
+                        onChange={handleEditorChange}
+                        height={500}
+                        textareaProps={{
+                            placeholder: "타인을 비방하거나 분쟁을 일으키는 게시글은 제재를 받을 수 있습니다.."
+                        }}
+                    />
+                </div>
+                <div>
+                    <Button style={{margin:"5px"}} variant="dark" type={"submit"}>
+                        <a className={"board-create-btn"}>글작성</a>
+                    </Button>
+                    <Button style={{margin:"5px"}} variant="dark" >
+                        <a href="/NoticeBoard" className={"board-create-btn"}>글목록</a>
+                    </Button>
+                </div>
+            </form>
         </div>
     );
 }

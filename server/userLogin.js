@@ -62,12 +62,23 @@ function signIn(req, res) {
 
             if (isEqual) {
                 // 세션에 사용자 ID 저장
+                const sessionID = req.sessionID;
                 req.session.userID = id;
+                const updateSessionIDQuery = 'UPDATE user SET user_session_id = ? WHERE user_id = ?';
+
                 // 비밀번호 일치 - 로그인 성공
                 console.log('로그인 성공.', result);
                 res.json({ message: '데이터가 성공적으로 전송되었습니다.', sessionID: req.sessionID });
                 console.log(req.session);
                 console.log(req.session.userID);
+                connection.query(updateSessionIDQuery, [sessionID, id], (err, result) => {
+                    if (err) {
+                        console.error('세션 ID 저장 에러:', err);
+                        res.status(500).json({ message: '로그인 성공.' });
+                        return;
+                    }
+                    console.log('세션 ID가 성공적으로 저장 되었습니다:', id);
+                });
             } else {
                 // 비밀번호 불일치
                 res.status(401).json({ message: '아이디 또는 비밀번호가 일치하지 않습니다.' });

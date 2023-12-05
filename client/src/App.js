@@ -9,20 +9,23 @@ import MyPage from "./Component/MyPage";
 import BossCaculator from "./Component/BossCaculator";
 import NoticeBoard from "./Component/NoticeBoard";
 import NoticeBoardCreate from "./Component/NoticeBoardCreate";
+import NoticesUpdates from "./Component/NoticesUpdates";
 
 function App() {
     return (
         <Router>
                 <Header />
                 <Routes>
+                    <Route path="/" element={<MainContents />} />
                     <Route path="/SignIn" element={<SignIn />} />
                     <Route path="/SignUp" element={<SignUp />} />
                     <Route path="/MyPage" element={<MyPage />} />
                     <Route path="/MainContents" element={<MainContents />} />
                     <Route path="/BossCaculator" element={<BossCaculator />} />
                     <Route path="/NoticeBoard" element={<NoticeBoard />} />
+                    <Route path="/NoticesUpdates" element={<NoticesUpdates />} />
                     <Route path="/NoticeBoardCreate" element={<NoticeBoardCreate />} />
-                    {/* 라우트 경로 설정 추가할 수 있습니다. */}
+                    {/* 라우트 경로 설정 추가할 수 있습니다. */}S
                 </Routes>
         </Router>
     );
