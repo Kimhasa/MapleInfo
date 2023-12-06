@@ -11,7 +11,7 @@
     border: 1px solid #ff8418;
     border-radius: 4px;
     margin: 10px;
-    font-size: 13px;
+    font-size: 15px;
 }
 
 .weakly-view-header1 {
@@ -36,7 +36,7 @@
     border: 1px solid #3d579b;
     border-radius: 4px;
     margin: 10px;
-    font-size: 13px;
+    font-size: 15px;
 }
 
 .weakly-view-header2 {
@@ -61,7 +61,7 @@
     border: 1px solid #ffcf19;
     border-radius: 4px;
     margin: 10px;
-    font-size: 13px;
+    font-size: 15px;
 }
 
 .weakly-view-header3 {
@@ -86,7 +86,7 @@
     border: 1px solid #8dd28d;
     border-radius: 4px;
     margin: 10px;
-    font-size: 13px;
+    font-size: 15px;
 }
 
 .weakly-view-header4 {
@@ -124,6 +124,15 @@
     font-size: 14px;
     line-height: 16px;
     margin-bottom: 10px;
+}
+
+.weakly-img-view {
+    width: 96px;
+    height: 96px;
+    transform: scale(2.0);
+    margin: 10px;
+    position: relative; /* z-index를 사용하기 위해 position 속성을 추가해야 합니다. */
+    z-index: -1; /* 이미지를 뒤쪽 레이어로 보냅니다. */
 }
 
 .view-details {

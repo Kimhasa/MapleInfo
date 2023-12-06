@@ -10,6 +10,7 @@ import BossCaculator from "./Component/BossCaculator";
 import NoticeBoard from "./Component/NoticeBoard";
 import NoticeBoardCreate from "./Component/NoticeBoardCreate";
 import NoticesUpdates from "./Component/NoticesUpdates";
+import TestPage from "./Component/TestPage";
 
 function App() {
     return (
@@ -17,6 +18,7 @@ function App() {
                 <Header />
                 <Routes>
                     <Route path="/" element={<MainContents />} />
+                    <Route path="/TestPage" element={<TestPage />} />
                     <Route path="/SignIn" element={<SignIn />} />
                     <Route path="/SignUp" element={<SignUp />} />
                     <Route path="/MyPage" element={<MyPage />} />

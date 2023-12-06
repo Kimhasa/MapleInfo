@@ -1,10 +1,33 @@
-import React from "react";
+import React, {useEffect, useState} from "react";
 import '../App.css';
 import '../css/MainContents.css'
 import testImg from '../img/testImg.png'
 import Button from 'react-bootstrap/Button';
+import axios from "axios";
 
 function MainContents(){
+
+    const [imageSrc1, setImageSrc] = useState('');
+    const [userName1, setUserName1] = useState('');
+    const [userLevel1, setUserLevel1] = useState('');
+    const [userClass1, setUserClass1] = useState('');
+    const [userRank1, setUserRank1] = useState('');
+    const [userRecord1, setUserRecord1] = useState('');
+
+    useEffect(() => {
+        axios.get('http://localhost:3000/scraping')
+            .then((response) => {
+                setImageSrc(response.data.imageSrc1);
+                setUserName1(response.data.userName1);
+                setUserLevel1(response.data.userLevel1);
+                setUserClass1(response.data.userClass1);
+                setUserRank1(response.data.userRank1);
+                setUserRecord1(response.data.userRecord1);
+            })
+            .catch((error) => {
+                console.log(error);
+            });
+    }, []);
 
     const currentDate = new Date();
     const monthNames = ['1월', '2월', '3월', '4월', '5월', '6월', '7월', '8월', '9월', '10월', '11월', '12월'];
@@ -19,16 +42,16 @@ function MainContents(){
                         <span>이번 주 <b className={"weakly-view-header-text1"}>무릉도장</b> 1등</span>
                     </div>
                     <div className={"weakly-view-text-small"}>
-                        <span>밥먹어친구야 LV281 듀얼블레이더</span>
+                        <span>{userName1} {userLevel1} {userClass1}</span>
                     </div>
                     <div>
-                        <img src={testImg} alt="테스트 이미지" />
+                        <img src={imageSrc1} alt="무릉도장 1등 이미지" className={"weakly-img-view"}/>
                     </div>
                     <div className={"weakly-view-text"}>
-                        <span>91층</span>
+                        <span>{userRank1}층</span>
                     </div>
                     <div className={"weakly-view-text-duration"}>
-                        14분 45초
+                        <span>{userRecord1}</span>
                     </div>
                     <div>
                         <Button variant="outline-dark" className="view-details-btn1">
