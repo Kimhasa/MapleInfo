@@ -7,7 +7,7 @@ const TestPage = () => {
     const [text2, setText2] = useState('');
 
     useEffect(() => {
-        axios.get('http://localhost:3000/scraping')
+        axios.get('http://localhost:3000/scrapingDojang')
             .then((response) => {
                 setImageSrc(response.data.imageSrc);
                 setText(response.data.text);
